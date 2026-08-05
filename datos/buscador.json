@@ -7,7 +7,7 @@
     "tipo": "Módulo",
     "descripcion": "Organiza materiales, equipos tecnológicos y producciones accesibles del CREBE Ucayali.",
     "etiquetas": ["repositorio", "materiales", "equipos", "producciones"],
-    "url": "https://crebe-ucayali.github.io/repositorio-accesible/",
+    "url": "https://crebeucayali.github.io/repositorio-accesible/",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -18,7 +18,7 @@
     "tipo": "Inventario",
     "descripcion": "Textos en Braille, láminas adaptadas, tarjetas de comunicación y material manipulativo.",
     "etiquetas": ["textos braille", "laminas", "tarjetas de comunicacion", "material manipulativo"],
-    "url": "https://crebe-ucayali.github.io/repositorio-accesible/#titulo-recursos",
+    "url": "https://crebeucayali.github.io/repositorio-accesible/#titulo-recursos",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -29,7 +29,7 @@
     "tipo": "Inventario",
     "descripcion": "Máquina Perkins, dispositivos de acceso y equipos para elaboración de materiales accesibles.",
     "etiquetas": ["perkins", "dispositivos", "tecnologia de apoyo"],
-    "url": "https://crebe-ucayali.github.io/repositorio-accesible/#titulo-recursos",
+    "url": "https://crebeucayali.github.io/repositorio-accesible/#titulo-recursos",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -40,7 +40,7 @@
     "tipo": "Colección institucional",
     "descripcion": "Silabarios, rutinas visuales, fichas adaptadas y materiales de sensibilización.",
     "etiquetas": ["silabario", "rutinas visuales", "fichas adaptadas", "sensibilizacion"],
-    "url": "https://crebe-ucayali.github.io/repositorio-accesible/#titulo-recursos",
+    "url": "https://crebeucayali.github.io/repositorio-accesible/#titulo-recursos",
     "fechaActualizacion": "2026-07-23"
   }
 ]
