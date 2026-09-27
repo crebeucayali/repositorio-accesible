@@ -1,6 +1,7 @@
 "use strict";
 
 function mostrarRespaldoImagen(imagen) {
+  if (!(imagen instanceof HTMLImageElement)) return;
   imagen.hidden = true;
 
   const respaldo = imagen.nextElementSibling;
@@ -9,9 +10,14 @@ function mostrarRespaldoImagen(imagen) {
   }
 }
 
-document.querySelectorAll(".recuadro-detalle img").forEach((imagen) => {
-  imagen.addEventListener("error", () => mostrarRespaldoImagen(imagen), { once: true });
+document.addEventListener("error", (evento) => {
+  const imagen = evento.target;
+  if (imagen instanceof HTMLImageElement && imagen.closest(".recuadro-detalle")) {
+    mostrarRespaldoImagen(imagen);
+  }
+}, true);
 
+document.querySelectorAll(".recuadro-detalle img").forEach((imagen) => {
   if (imagen.complete && imagen.naturalWidth === 0) {
     mostrarRespaldoImagen(imagen);
   }
