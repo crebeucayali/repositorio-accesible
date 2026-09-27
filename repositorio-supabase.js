@@ -13,15 +13,24 @@
     const texto = String(valor || "").trim();
     if (!texto) return "";
 
-    if (/^assets\/[a-z0-9._/-]+$/i.test(texto)) {
+    if (/^assets\/[a-z0-9._/-]+\.(jpg|jpeg|png|webp)$/i.test(texto)) {
       return texto;
     }
 
     try {
       const url = new URL(texto, window.location.href);
-      if (url.protocol !== "https:") return "";
-      if (url.hostname.toLowerCase() !== "crebeucayali.github.io") return "";
-      return url.href;
+
+      const githubRepositorio =
+        url.protocol === "https:" &&
+        url.hostname.toLowerCase() === "crebeucayali.github.io" &&
+        /^\/repositorio-accesible\/assets\/[a-z0-9._/-]+\.(jpg|jpeg|png|webp)$/i.test(url.pathname);
+
+      const storageRepositorio =
+        url.protocol === "https:" &&
+        url.hostname.toLowerCase() === "dteimbhwtzghhsijeeld.supabase.co" &&
+        /^\/storage\/v1\/object\/public\/eva-publico\/repositorio\/[a-z0-9._/-]+\.(jpg|jpeg|png|webp)$/i.test(url.pathname);
+
+      return githubRepositorio || storageRepositorio ? url.href : "";
     } catch {
       return "";
     }
