@@ -40,9 +40,10 @@
     const endpoint = new URL(SUPABASE_URL + "/rest/v1/repositorio_recursos");
     endpoint.searchParams.set(
       "select",
-      "id,categoria,orden,titulo,descripcion,imagen_url,imagen_alt,updated_at"
+      "id,categoria,orden,titulo,descripcion,imagen_url,imagen_alt,estado_publicacion,updated_at"
     );
     endpoint.searchParams.set("visible", "eq.true");
+    endpoint.searchParams.set("estado_publicacion", "eq.publicado");
     endpoint.searchParams.set("order", "categoria.asc,orden.asc,titulo.asc");
 
     const respuesta = await fetch(endpoint.href, {
