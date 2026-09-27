@@ -6,6 +6,20 @@ RA se integra al EVA como un espacio destinado a organizar materiales, recursos,
 
 Aunque cada módulo del EVA cumple una función específica, todos responden a una misma orientación general: facilitar el acceso a recursos educativos inclusivos y promover el uso organizado de herramientas digitales al servicio de la educación. En ese sentido, RA no funciona como un repositorio aislado, sino como una parte articulada de una plataforma mayor, donde los recursos se organizan bajo criterios de accesibilidad, utilidad pedagógica, claridad de uso y mejora continua.
 
+## Integración dinámica con Supabase
+
+Repositorio Accesible utiliza Supabase para administrar los recursos visibles de sus tres categorías principales:
+
+- Materiales disponibles.
+- Equipos tecnológicos.
+- Materiales elaborados.
+
+La página pública consulta `public.repositorio_recursos` y genera automáticamente cada recurso dentro de su categoría. El HTML existente se conserva como respaldo local si la consulta remota falla.
+
+La administración se realiza desde el panel privado EVA, protegido con Supabase Auth, autorización explícita y MFA AAL2. Desde allí se pueden crear, editar, ocultar y eliminar recursos. Las operaciones administrativas quedan registradas en auditoría.
+
+La imagen de un recurso es opcional. Puede utilizar una ruta local `assets/...` o una URL HTTPS permitida del ecosistema.
+
 ## Naturaleza del proyecto
 
 RA es un módulo de carácter personal, educativo, informativo, organizativo y digital. Su desarrollo no corresponde a una creación institucional ni depende de una entidad externa. La planificación, diseño funcional, organización de contenidos, estructura técnica, documentación, criterios de integración, mantenimiento y mejora progresiva forman parte del trabajo personal del Psicólogo Gabriel Berrospi como autor y desarrollador del Ecosistema Virtual Accesible, EVA.
