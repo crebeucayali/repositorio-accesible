@@ -111,3 +111,13 @@ body .portada h1{
     font-size:1.1875rem;
   }
 }
+
+/* Ajuste compartido de altura de la franja superior EVA */
+@media (min-width:701px){
+  .cabecera > .navegacion,
+  .cabecera .navegacion{
+    min-height:74px;
+    padding-top:6px;
+    padding-bottom:6px;
+  }
+}
