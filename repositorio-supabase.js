@@ -148,6 +148,7 @@
       const categoria = lista.dataset.categoria;
       const items = porCategoria.get(categoria) || [];
       lista.replaceChildren();
+      lista.hidden = false;
 
       if (!items.length) {
         const vacio = document.createElement("li");
@@ -165,13 +166,14 @@
   }
 
   async function cargarRepositorioDesdeSupabase() {
+    aplicarRecursos([]);
     try {
       const recursos = await consultarRecursos();
       aplicarRecursos(recursos);
       document.documentElement.dataset.repositorioFuente = "supabase";
     } catch (error) {
-      document.documentElement.dataset.repositorioFuente = "respaldo-local";
-      console.warn("Repositorio Accesible: se mantiene el respaldo local.", error);
+      document.documentElement.dataset.repositorioFuente = "no-disponible";
+      console.warn("Repositorio Accesible: no se pudo verificar el contenido publicado.", error);
     }
   }
 
