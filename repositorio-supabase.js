@@ -166,13 +166,18 @@
   }
 
   async function cargarRepositorioDesdeSupabase() {
-    aplicarRecursos([]);
+    // Conservar el inventario HTML como respaldo mientras se consulta Supabase.
+    document.querySelectorAll(".lista-ejemplos[data-categoria]").forEach((lista) => { lista.hidden = false; });
     try {
       const recursos = await consultarRecursos();
-      aplicarRecursos(recursos);
-      document.documentElement.dataset.repositorioFuente = "supabase";
+      if (recursos.length) {
+        aplicarRecursos(recursos);
+        document.documentElement.dataset.repositorioFuente = "supabase";
+      } else {
+        document.documentElement.dataset.repositorioFuente = "respaldo-local";
+      }
     } catch (error) {
-      document.documentElement.dataset.repositorioFuente = "no-disponible";
+      document.documentElement.dataset.repositorioFuente = "respaldo-local";
       console.warn("Repositorio Accesible: no se pudo verificar el contenido publicado.", error);
     }
   }
