@@ -125,15 +125,3 @@ body .portada h1{
 
 /* Escala tipográfica del footer institucional RA */
 .footer-legal-eva a{font-size:.8125rem;}
-
-/* RA: inventario siempre visible y vistas previas integradas. */
-.lista-ejemplos[data-categoria] { display: grid !important; gap: 12px; }
-.lista-ejemplos[data-categoria] .item-recurso { margin: 0; padding: 14px; font-weight: 750; cursor: auto; }
-.lista-ejemplos[data-categoria] .recuadro-detalle { position: static; display: grid; grid-template-columns: 1fr; width: 100%; opacity: 1; pointer-events: auto; transform: none; box-shadow: none; border: 0; border-radius: 10px; padding: 10px 0 0; overflow: visible; transition: none; }
-.lista-ejemplos[data-categoria] .recuadro-detalle img { width: 100%; height: auto; max-height: 250px; object-fit: contain; }
-.lista-ejemplos[data-categoria] .recuadro-detalle img[hidden] { display: none; }
-.lista-ejemplos[data-categoria] .imagen-pendiente:not([hidden]) { display: grid; min-height: 105px; }
-.lista-ejemplos[data-categoria] .detalle-texto { grid-column: 1; }
-.lista-ejemplos[data-categoria] .item-recurso:hover .recuadro-detalle,
-.lista-ejemplos[data-categoria] .item-recurso:focus .recuadro-detalle { transform: none; }
-@media (max-width: 700px) { .lista-ejemplos[data-categoria] .recuadro-detalle img { max-height: 200px; } }
